@@ -15,9 +15,9 @@ async def on_command_error(ctx, error):
 
 @bot.event    
 async def on_command_error(ctx2, error):
-    orig_error = getattr(error2, "original", error)
+    orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
-    await ctx2.send(error2_msg)
+    await ctx2.send(error_msg)
     
 @bot.event
 async def on_command_error(ctx3, error):
